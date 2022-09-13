@@ -1,0 +1,58 @@
+name: news_app
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons:
+  get:
+  shared_preferences:
+  google_fonts:
+  dio:
+  video_player:
+  flutter_svg:
+  iconsax:
+  carousel_slider:
+  flutter_zoom_drawer:
+  google_nav_bar:
+  auto_size_text:
+  url_launcher:
+  url_launcher_windows:
+  readmore:
+  gif:
+  animations:
+  youtube_player_flutter:
+  file_picker:
+  marquee:
+  smooth_star_rating_nsafe:
+  liquid_progress_indicator:
+  dash_chat_2:
+  intl:
+  cached_network_image:
+  custom_navigation_bar:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/
+

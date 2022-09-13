@@ -1,0 +1,7 @@
+<svg id="info" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <path id="Path_645" data-name="Path 645" d="M5,0a5,5,0,1,0,5,5A5.006,5.006,0,0,0,5,0ZM5,0" fill="#f0f0f0"/>
+  <path id="Path_646" data-name="Path 646" d="M235.5,107.085a.417.417,0,1,1-.417-.417A.417.417,0,0,1,235.5,107.085Zm0,0" transform="translate(-230.084 -104.585)" fill="#7fccb4"/>
+  <path id="Path_647" data-name="Path 647" d="M203.71,196.167a.313.313,0,0,1-.312-.312v-3.229h-.417a.313.313,0,1,1,0-.625h.729a.313.313,0,0,1,.313.313v3.542A.313.313,0,0,1,203.71,196.167Zm0,0" transform="translate(-198.709 -188.25)" fill="#7fccb4"/>
+  <path id="Path_648" data-name="Path 648" d="M5,10a5,5,0,1,1,5-5A5.006,5.006,0,0,1,5,10ZM5,.625A4.375,4.375,0,1,0,9.375,5,4.38,4.38,0,0,0,5,.625Zm0,0" fill="#232323"/>
+  <path id="Path_649" data-name="Path 649" d="M194.188,373.957h-1.875a.313.313,0,0,1,0-.625h1.875a.313.313,0,1,1,0,.625Zm0,0" transform="translate(-188.25 -366.04)" fill="#7fccb4"/>
+</svg>

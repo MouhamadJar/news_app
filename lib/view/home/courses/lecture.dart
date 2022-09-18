@@ -1,20 +1,28 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:news_app/controllers/network_controllers/api_controller.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../../models/components/components.dart';
 import '../../../models/components/constants.dart';
 import '../home_screen.dart';
+import 'quiz.dart';
 
 class Lecture extends StatefulWidget {
-  const Lecture({Key? key, required this.pdfName, required this.youtubeLink, required this.courseName})
+  const Lecture(
+      {Key? key,
+      required this.courseID,
+      required this.successRate,
+      required this.pdfName,
+      required this.youtubeLink,
+      required this.courseName})
       : super(key: key);
   final String pdfName;
   final String youtubeLink;
   final String courseName;
+  final int courseID;
+  final int successRate;
 
   @override
   State<Lecture> createState() => _LectureState();
@@ -82,8 +90,7 @@ class _LectureState extends State<Lecture> {
               reverse: false,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 2),
-              autoPlayAnimationDuration:
-              const Duration(milliseconds: 750),
+              autoPlayAnimationDuration: const Duration(milliseconds: 750),
               autoPlayCurve: Curves.fastOutSlowIn,
               scrollDirection: Axis.horizontal,
             ),
@@ -92,7 +99,6 @@ class _LectureState extends State<Lecture> {
       ),
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
-        //toolbarHeight: Get.height * .15,
         title: Row(
           children: [
             SizedBox(
@@ -146,14 +152,12 @@ class _LectureState extends State<Lecture> {
           ),
           SizedBox(height: Get.height * .07),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            width : Get.width,
-            height : Get.height*.06,
-            child: FittedBox(
-              child: showText(
-                text: widget.courseName,
-                textColor: kBlack,
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            width: Get.width,
+            child: showText(
+              text: widget.courseName,
+              textColor: kBlack,
+              size: 15,
             ),
           ),
           SizedBox(height: Get.height * .07),
@@ -162,9 +166,9 @@ class _LectureState extends State<Lecture> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  width : Get.width,
-                  height : Get.height*.04,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  width: Get.width,
+                  height: Get.height * .04,
                   child: FittedBox(
                     child: showText(
                       text: 'Or download the lecture as pdf',
@@ -173,11 +177,35 @@ class _LectureState extends State<Lecture> {
                   ),
                 ),
                 IconButton(
-                    onPressed: () {
-                      APIController().downloadPdf(pdfName: widget.pdfName);
-                    },
-                    icon:  Image.asset('assets/pdf.png'))
+                  onPressed: () {
+                    APIController().downloadPdf(pdfName: widget.pdfName);
+                  },
+                  icon: Image.asset('assets/pdf.png'),
+                ),
               ],
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Center(
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+              ),
+              onPressed: () {
+                token == 'noToken'
+                    ? loginValidateWidget()
+                    : Get.to(() => Quiz(
+                          successRate: widget.successRate,
+                          id: widget.courseID,
+                        ));
+              },
+              child: showText(
+                text: 'take a quiz',
+                textColor: kWhite,
+                size: 12,
+              ),
             ),
           ),
         ],

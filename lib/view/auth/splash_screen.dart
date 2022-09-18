@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/components/constants.dart';
 import 'package:news_app/view/home/home_screen.dart';
 
-import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -35,7 +34,7 @@ late GifController controller;
            controller.reset();
           },
           fps: 30,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
           autostart: Autostart.once,
           placeholder: (context) => const Text(''),
         ),

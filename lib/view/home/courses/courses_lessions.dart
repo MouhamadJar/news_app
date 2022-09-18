@@ -142,6 +142,8 @@ class Course extends StatelessWidget {
                                   ? loginValidateWidget()
                                   : Get.to(() => Lecture(
                                 courseName: courseName,
+                                      successRate: successRate,
+                                      courseID: courseID,
                                       pdfName:
                                           lessons[index].files.first.type ==
                                                   'pdf'
@@ -209,25 +211,7 @@ class Course extends StatelessWidget {
                           itemCount: lessons.length,
                         ),
                       ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(kPrimaryColor),
-                        ),
-                        onPressed: () {
-                          token == 'noToken'
-                              ? loginValidateWidget()
-                              : Get.to(() => Quiz(
-                                    successRate: successRate,
-                                    id: courseID,
-                                  ));
-                        },
-                        child: showText(
-                          text: 'take a quiz',
-                          textColor: kWhite,
-                          size: 12,
-                        ),
-                      ),
+
                     ],
                   ),
                 );

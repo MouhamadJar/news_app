@@ -660,6 +660,7 @@ class HomeScreen extends StatelessWidget {
                             imageLink: 'assets/course.jpg',
                             onTap: () {},
                             secondWidget: CourseCategory(),
+                            padding: Get.height*.029,
                           ),
                           HomeCard(
                             height: height,
@@ -667,12 +668,14 @@ class HomeScreen extends StatelessWidget {
                             name: 'Scientific Researches',
                             details: 'details',
                             imageLink: 'assets/scientific researches.jpg',
+                            color: kBlack,
                             onTap: () {
                               Get.to(
                                 () => Researches(),
                               );
                             },
                             secondWidget: Researches(),
+                            padding: Get.height*.029,
                           ),
                           HomeCard(
                             height: height,

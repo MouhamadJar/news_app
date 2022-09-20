@@ -97,7 +97,7 @@ class ChatScreen extends StatelessWidget {
                       icon: FittedBox(
                         child: Column(
                           children: [
-                            const Icon(Icons.supervised_user_circle_rounded),
+                            const Icon(Icons.supervised_user_circle_rounded,),
                             SizedBox(
                               height: Get.height * .02,
                               width: Get.width * .07,
@@ -105,6 +105,7 @@ class ChatScreen extends StatelessWidget {
                                 child: showText(
                                   text: chatController.roomMembers.length
                                       .toString(),
+                                  textColor: kWhite,
                                 ),
                               ),
                             ),

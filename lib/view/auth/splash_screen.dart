@@ -22,7 +22,7 @@ late GifController controller;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: kBlack,
       body: Center(
         child:  Gif(
           controller: controller,
@@ -34,7 +34,9 @@ late GifController controller;
            controller.reset();
           },
           fps: 30,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
+          height: Get.height,
+          width: Get.width,
           autostart: Autostart.once,
           placeholder: (context) => const Text(''),
         ),

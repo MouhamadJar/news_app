@@ -304,7 +304,7 @@ class Events extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           margin: const EdgeInsets.all(16),
           width : Get.width,
-          height :match.goalscorer.isEmpty ? Get.height *.032 : (Get.height *.065)*match.goalscorer.length,
+          height :match.goalscorer.isEmpty ? Get.height *.062 : (Get.height *.065)*match.goalscorer.length,
           child: ListView.builder(
             itemBuilder: (context,index){
               print(match.goalscorer[index].homeScorer);
@@ -379,7 +379,7 @@ class Events extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           margin: const EdgeInsets.all(16),
           width : Get.width,
-          height :match.cards.isEmpty ? Get.height *.032 : (Get.height *.04)*match.cards.length,
+          height :match.cards.isEmpty ? Get.height *.06 : (Get.height *.055)*match.cards.length,
           child: ListView.builder(
             itemBuilder: (context,index) => match.cards.isEmpty ?
             SizedBox(
@@ -388,18 +388,31 @@ class Events extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                showText(
-                  text: match.cards[index].homeFault.isEmpty ? '' :match.cards[index].homeFault ,
-                  size: 14,
-                  textColor: kPrimaryColor,
-                  fontWeight: FontWeight.bold,
+                SizedBox(
+                  width: Get.width*.3,
+                  child: showText(
+                    text: match.cards[index].homeFault.isEmpty ? '' :match.cards[index].homeFault ,
+                    size: 14,
+                    textColor: kPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-
-                showText(
-                  text: match.cards[index].awayFault.isEmpty ? '' :match.cards[index].awayFault ,
-                  size: 14,
-                  textColor: kPrimaryColor,
-                  fontWeight: FontWeight.bold,
+                SizedBox(
+                  width: Get.width*.2,
+                  child: showText(
+                    text: match.cards[index].card,
+                    size: 12,
+                    textColor: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: Get.width*.3,
+                  child: showText(
+                    text: match.cards[index].awayFault.isEmpty ? '' :match.cards[index].awayFault ,
+                    size: 14,
+                    textColor: kPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -440,9 +453,9 @@ class Events extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           margin: const EdgeInsets.all(16),
           width : Get.width,
-          height : math.max(match.substitutions.home.length.toDouble(), match.substitutions.home.length.toDouble()) == 0 ? Get.height*.03 :math.max(match.substitutions.home.length.toDouble(), match.substitutions.home.length.toDouble())*Get.height*.05 ,
+          height : math.max(match.substitutions.home.length.toDouble(), match.substitutions.home.length.toDouble()) == 0 ? Get.height*.06 :math.max(match.substitutions.home.length.toDouble(), match.substitutions.home.length.toDouble())*Get.height*.05 ,
           child: ListView.builder(
-            itemBuilder: (context,index) => match.cards.isEmpty ?
+            itemBuilder: (context,index) => match.substitutions.home.isEmpty &&match.substitutions.away.isEmpty ?
             SizedBox(
               child: showText(text: 'no substitutions',size: 12,textColor: kBlack),
             ) :
@@ -450,14 +463,14 @@ class Events extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 showText(
-                  text: match.substitutions.home[index]['substitution'] ?? ''  ,
+                  text:match.substitutions.home.length > index ?match.substitutions.home[index]['substitution']:''    ,
                   size: 12,
                   textColor: kPrimaryColor,
                   fontWeight: FontWeight.bold,
                 ),
 
                 showText(
-                  text:match.substitutions.away[index]['substitution'] ?? '' ,
+                  text: match.substitutions.away.length > index ?  match.substitutions.away[index]['substitution'] : '' ,
                   size: 12,
                   textColor: kPrimaryColor,
                   fontWeight: FontWeight.bold,

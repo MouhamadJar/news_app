@@ -182,11 +182,11 @@ class ChatController extends GetxController {
                     SizedBox(
                       height: Get.height * .015,
                     ),
-                    showText(text: user.userName),
+                    showText(text: user.userName,textColor: kWhite),
                     SizedBox(
                       height: Get.height * .015,
                     ),
-                    showText(text: user.country),
+                    showText(text: user.country,textColor: kWhite),
                     SizedBox(
                       height: Get.height * .015,
                     ),

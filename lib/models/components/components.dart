@@ -46,7 +46,8 @@ Widget HomeCard({
   required String imageLink,
   required VoidCallback onTap,
   required Widget secondWidget,
-  color = null,
+  color,
+  padding,
 }) =>
     InkWell(
       onTap: () {},
@@ -71,7 +72,7 @@ Widget HomeCard({
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: height * .015,
+                  height:padding ?? height * .021,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),

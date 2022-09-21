@@ -27,7 +27,7 @@ class CourseModel {
   CourseModel.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
-    successRate = json['successRate'];
+    successRate =int.parse( json['successRate']);
     details = json['details'];
     if (json['images'] != null) {
       images = [];

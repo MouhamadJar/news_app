@@ -33,7 +33,7 @@ class ResearchModel {
     title = json['title'];
     body = json['body'];
     link = json['link'];
-    countOfVisitors = json['CountOfVisitors'];
+    countOfVisitors = json['CountOfVisitors'] ?? ['0'];
     author = json['author'];
     if (json['images'] != null) {
       images = [];

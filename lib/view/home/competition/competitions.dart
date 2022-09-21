@@ -164,9 +164,9 @@ class Competitions extends StatelessWidget {
                   OpenContainer(
                     openBuilder: (context, action)=>CompetitionDetails(
                       id: competitionController.competitions[index].id,
-                      image: imageURL +
-                          competitionController
-                              .competitions[index].images.first.src,
+                      image: '$imageURL/${competitionController
+                        .competitions[index].images.first.src
+                    }',
                     ) ,
                     closedBuilder: (context , action) => Container(
                       margin: EdgeInsets.symmetric(
@@ -196,12 +196,11 @@ class Competitions extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(7.6),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        imageURL +
-                                            competitionController
+                                        '$imageURL/${competitionController
                                                 .competitions[index]
                                                 .images
                                                 .first
-                                                .src,
+                                                .src}',
                                       ),
                                       fit: BoxFit.cover,
                                       filterQuality: FilterQuality.high,

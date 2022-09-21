@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_options.dart';
+import  'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +9,6 @@ import 'package:news_app/models/components/components.dart';
 import 'package:news_app/models/components/constants.dart';
 import 'package:readmore/readmore.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import '../../../controllers/home_controller.dart';
 import '../../../controllers/network_controllers/api_controller.dart';
 

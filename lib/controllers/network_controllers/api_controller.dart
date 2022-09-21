@@ -26,7 +26,7 @@ class APIController extends get_x.GetxController {
   APIController() {
     dio = Dio(
       BaseOptions(
-          baseUrl: 'https://aurora-team.com/newsApp/public/api',
+          baseUrl: 'http://ifmis-2030.icu/newsApp/api',
           receiveDataWhenStatusError: true,
           headers: {'Accept': 'application/json'}),
     );
@@ -304,7 +304,12 @@ class APIController extends get_x.GetxController {
   Future<Response> sendCertificate({
     required int courseID,
   }) async {
-    return dio.post(
+    return Dio(
+      BaseOptions(
+          baseUrl: 'http://ifmis-2030.icu/newsApp/public/api',
+          receiveDataWhenStatusError: true,
+          headers: {'Accept': 'application/json'}),
+    ).post(
       '/sendCertificate/$courseID',
       options: Options(
         headers: {

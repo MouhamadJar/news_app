@@ -192,7 +192,7 @@ class FreeCourses extends StatelessWidget {
                                                 BorderRadius.circular(7.6),
                                             image: DecorationImage(
                                               image: NetworkImage(
-                                                'http://aurora-team.com/newsApp/public/storage/${controller.freeCourses[index].images.first.src}',
+                                                '$imageURL${controller.freeCourses[index].images.first.src}',
                                               ),
                                               fit: BoxFit.fill,
                                               filterQuality: FilterQuality.high,
